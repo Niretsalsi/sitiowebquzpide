@@ -47,45 +47,36 @@ nav.navbar.custom-navbar {
   background-color: transparent !important;
 }
 /* aqui termina el nav */
+.solo-gif-slider {
+  position: relative;
+  overflow: hidden;
+}
 
+.solo-gif-slider .solo-gif {
+  display: block;
+  width: 100%;
+  height: auto;
+}
 
-
-
-.carousel-control-prev, .carousel-control-next {
+.solo-gif-slider .gif-caption {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%); /* Centrado vertical */
-  background-color: transparent; /* Sin fondo */
-  border: none;
-  z-index: 10; /* Asegura que los botones estén por encima de las imágenes */
+  bottom: 1rem;           /* ajusta altura del texto */
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  background: rgba(0, 0, 0, 0.4); /* semitransparente para legibilidad */
+  border-radius: 0.25rem;
 }
 
-/* Colocar el botón "Anterior" en el lado izquierdo */
-.carousel-control-prev {
-  left: 10px; /* Pegado al borde izquierdo */
+.solo-gif-slider .gif-caption h5 {
+  margin: 0 0 0.25rem;
 }
 
-/* Colocar el botón "Siguiente" en el lado derecho */
-.carousel-control-next {
-  right: 10px; /* Pegado al borde derecho */
-}
-
-/* Asegurarnos de que el ícono predeterminado de Bootstrap no se muestre */
-.carousel-control-prev-icon:before, .carousel-control-next-icon:before {
-  content: none; /* Eliminar el ícono predeterminado */
-}
-
-/* Ajustar el tamaño de los íconos SVG a un tamaño adecuado */
-.carousel-control-prev-icon, .carousel-control-next-icon {
-  width: 40px; /* Ajusta el tamaño del ícono */
-  height: 40px; /* Ajusta el tamaño del ícono */
-}
-
-/* Efecto hover para los botones cuando el cursor pasa por encima */
-.carousel-control-prev:hover, .carousel-control-next:hover {
-  background-color: transparent; /* Fondo transparente */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra suave alrededor */
-  border-radius: 50%; /* Bordes redondeados */
+.solo-gif-slider .gif-caption p {
+  margin: 0;
+  font-size: 0.9rem;
 }
 
 .quinessomos{
@@ -441,7 +432,7 @@ h1{
 
 
 .footer-info-extra .restricciones {
-  font-size: .5625rem;
+  font-size: 0.75rem;
   opacity: 0.8;
 }
 
@@ -467,12 +458,12 @@ h1{
 
 /* Opcional: ajustar tipografía interna */
 .link-footer-extra .atencion {
-  font-size: 1.25rem;
+  font-size: 0.9rem;
   font-weight: 600;
 }
 
 .link-footer-extra .restricciones {
-  font-size: .5rem;
+  font-size: 0.75rem;
   opacity: 0.85;
 }
 
@@ -865,74 +856,6 @@ color: #fff;
 .services-list6 li .no-transform {
   text-transform: none;
 }
-
-
-
-/* marcas version movil */
-@media (max-width: 768px) {
-  /* 1) Contenedor blanco */
-  .banner-logos {
-    position: relative;
-    width: 100%;
-    background: #fff;
-    border-radius: .75rem;
-    overflow: hidden;
-    padding: 1rem 0;
-    box-sizing: border-box;
-    min-height: 360px;     /* Ajusta según necesites */
-  }
-
-  /* 2) Cada slide: flex en columna, ocupa todo el espacio */
-  .logo-group {
-    position: absolute;
-    inset: 0;              /* top/right/bottom/left = 0 */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;  /* reparte los 4 logos equitativamente */
-    align-items: center;           /* centra cada logo horizontal */
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.4s ease-in-out;
-  }
-  .logo-group.active {
-    opacity: 1;
-    pointer-events: auto;
-    z-index: 2;
-  }
-
-  /* 3) Logos con máximo tamaño y centrado */
-  .logo-group img {
-    max-width: 100px;    /* sube o baja este valor según necesites */
-    max-height: 100px;
-    object-fit: contain; /* conserva proporciones */
-  }
-
-  /* 4) Ocultar a partir del 5º logo */
-  .logo-group img:nth-child(n+5) {
-    display: none;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Móvil: apilar en columna  footer*/
 @media (max-width: 800px) {
   .seccionfooter {
@@ -944,9 +867,89 @@ color: #fff;
 }
 
 
-li.sin-viñeta {
-  list-style-type: none;    /* compatibilidad broad */
+/* Estilos por defecto (desktop) */
+.solo-gif-slider .gif-caption {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 0.25rem;
 }
-li.sin-viñeta::marker {
-  content: '';              /* elimina el marcador manteniendo la indentación */
+.solo-gif-slider .gif-caption h5 {
+  margin: 0 0 0.25rem;
+  font-size: 1.5rem;    /* tamaño desktop */
+  line-height: 1.2;
+}
+.solo-gif-slider .gif-caption p {
+  margin: 0;
+  font-size: 1rem;      /* tamaño desktop */
+}
+
+/* Ajustes responsive para pantallas < 768px */
+@media (max-width: 767px) {
+  .solo-gif-slider .gif-caption {
+    bottom: 0.5rem;             /* un poco más abajo */
+    padding: 0.25rem 0.5rem;    /* menos padding */
+    width: 90%;                 /* que no ocupe todo el ancho */
+  }
+  .solo-gif-slider .gif-caption h5 {
+    font-size: .9375rem;     /* más pequeño */
+    line-height: 1.1;
+  }
+  .solo-gif-slider .gif-caption p {
+    font-size: .625rem;  /* más pequeño */
+    line-height: 1.2;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Apilar todo el banner en columna */
+  .banner-clientes {
+    flex-direction: column;
+    border-radius: 1rem;
+    max-width: 100%;
+    margin: 1rem 0.5rem;
+  }
+
+  /* Ajustar el área de texto */
+  .banner-texto {
+    padding: 1.2rem;
+    border-radius: 1rem 1rem 0 0;
+    text-align: center;
+  }
+
+  /* El contenedor de logos ocupa todo el ancho y altura suficiente */
+  .banner-logos {
+    min-height: 12.5rem;
+    padding: 1rem 0;
+    border-radius: 0 0 1rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Cada grupo pasa a columna y se centra */
+  .logo-group {
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 1rem !important;
+    width: 100%;
+    position: absolute;
+    inset: 0;
+  }
+
+  /* Logos más pequeños y responsivos */
+  .logo-group img {
+    max-width: 80px;
+    max-height: 50px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    margin: 0.25rem 0;
+  }
 }
