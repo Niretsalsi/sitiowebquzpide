@@ -441,7 +441,7 @@ h1{
 
 
 .footer-info-extra .restricciones {
-  font-size: 0.75rem;
+  font-size: .5625rem;
   opacity: 0.8;
 }
 
@@ -467,12 +467,12 @@ h1{
 
 /* Opcional: ajustar tipografía interna */
 .link-footer-extra .atencion {
-  font-size: 0.9rem;
+  font-size: 1.25rem;
   font-weight: 600;
 }
 
 .link-footer-extra .restricciones {
-  font-size: 0.75rem;
+  font-size: .5rem;
   opacity: 0.85;
 }
 
@@ -870,24 +870,26 @@ color: #fff;
 
 /* marcas version movil */
 @media (max-width: 768px) {
-  /* 1) Aseguramos que el contenedor tenga suficiente altura */
+  /* 1) Contenedor blanco */
   .banner-logos {
     position: relative;
+    width: 100%;
     background: #fff;
     border-radius: .75rem;
     overflow: hidden;
     padding: 1rem 0;
-    min-height: 360px;    /* sube el container para más espacio vertical */
+    box-sizing: border-box;
+    min-height: 360px;     /* Ajusta según necesites */
   }
 
-  /* 2) Grid de 4 filas con espacio uniforme */
+  /* 2) Cada slide: flex en columna, ocupa todo el espacio */
   .logo-group {
     position: absolute;
-    inset: 0;
-    display: grid;
-    grid-template-rows: repeat(4, auto);
-    align-content: space-evenly;  /* reparte las filas verticalmente */
-    justify-items: center;        /* centra logos horizontal */
+    inset: 0;              /* top/right/bottom/left = 0 */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;  /* reparte los 4 logos equitativamente */
+    align-items: center;           /* centra cada logo horizontal */
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.4s ease-in-out;
@@ -898,18 +900,37 @@ color: #fff;
     z-index: 2;
   }
 
-  /* 3) Logos más grandes */
+  /* 3) Logos con máximo tamaño y centrado */
   .logo-group img {
-    max-width: 100px;    /* antes 80px, lo subimos */
+    max-width: 100px;    /* sube o baja este valor según necesites */
     max-height: 100px;
-    object-fit: contain;
+    object-fit: contain; /* conserva proporciones */
   }
 
-  /* 4) Ocultar todo a partir del 5º logo */
+  /* 4) Ocultar a partir del 5º logo */
   .logo-group img:nth-child(n+5) {
     display: none;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* Móvil: apilar en columna  footer*/
@@ -920,4 +941,12 @@ color: #fff;
     padding: 1.2rem 0.5rem;
     text-align: center;
   }
+}
+
+
+li.sin-viñeta {
+  list-style-type: none;    /* compatibilidad broad */
+}
+li.sin-viñeta::marker {
+  content: '';              /* elimina el marcador manteniendo la indentación */
 }
