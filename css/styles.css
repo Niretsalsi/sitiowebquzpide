@@ -1,0 +1,923 @@
+/*sección navbar*/
+body {
+  padding-top: 80px; /* o la altura que tenga realmente tu navbar */
+}
+
+nav.navbar.custom-navbar {
+  background-color: #0d38a6 !important;
+}
+
+.nav-link {
+  color: #fff !important;                         /* color por defecto */
+  padding: 0.25rem 0.5rem;                /* espacio interno */
+  border-radius: 0.25rem;                 /* esquinas redondeadas */
+  transition:                             
+  color 0.2s ease,                     /* transición suave de color */
+  background-color 0.2s ease;
+    font-size: 1.5rem;
+}
+.custom-navbar .nav-link:hover {
+  color: #0a1b45 !important;              /* nuevo color de texto */
+  background-color: rgba(255,255,255,0.9) !important; /* nuevo fondo */
+}
+.logo-icon {
+  width: 3.75rem;    /* ancho fijo */
+  height: auto; }
+
+.custom-navbar .navbar-toggler-icon {
+  filter: invert(1);
+}
+.custom-navbar .navbar-toggler {
+  border: none !important;
+  background-color: transparent !important;
+  margin: 0;              /* elimina márgenes extra */
+  padding: 0.25rem 0.75rem;/* opcional: ajusta el padding a tu gusto */
+}
+
+/* 2) Quita el outline/box-shadow al hacer foco */
+.custom-navbar .navbar-toggler:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* 3) Asegúrate de estar usando la versión blanca del ícono */
+.custom-navbar.navbar-dark .navbar-toggler-icon {
+  /* esta es la versión SVG en blanco de Bootstrap 5 */
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255,255,255,1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
+  background-color: transparent !important;
+}
+/* aqui termina el nav */
+
+
+
+
+.carousel-control-prev, .carousel-control-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%); /* Centrado vertical */
+  background-color: transparent; /* Sin fondo */
+  border: none;
+  z-index: 10; /* Asegura que los botones estén por encima de las imágenes */
+}
+
+/* Colocar el botón "Anterior" en el lado izquierdo */
+.carousel-control-prev {
+  left: 10px; /* Pegado al borde izquierdo */
+}
+
+/* Colocar el botón "Siguiente" en el lado derecho */
+.carousel-control-next {
+  right: 10px; /* Pegado al borde derecho */
+}
+
+/* Asegurarnos de que el ícono predeterminado de Bootstrap no se muestre */
+.carousel-control-prev-icon:before, .carousel-control-next-icon:before {
+  content: none; /* Eliminar el ícono predeterminado */
+}
+
+/* Ajustar el tamaño de los íconos SVG a un tamaño adecuado */
+.carousel-control-prev-icon, .carousel-control-next-icon {
+  width: 40px; /* Ajusta el tamaño del ícono */
+  height: 40px; /* Ajusta el tamaño del ícono */
+}
+
+/* Efecto hover para los botones cuando el cursor pasa por encima */
+.carousel-control-prev:hover, .carousel-control-next:hover {
+  background-color: transparent; /* Fondo transparente */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra suave alrededor */
+  border-radius: 50%; /* Bordes redondeados */
+}
+
+.quinessomos{
+  background-color: #0a1b45;
+}
+
+.cardhome{
+
+    border-radius: 1.875rem 1.875rem 0 0; /* Bordes redondeados solo en la parte superior */
+    margin: .3125rem;/* Margen de 5px (convertido a rem) */
+    overflow: hidden; /* Para que el contenido se ajuste bien dentro */
+    background-color: white; /* Fondo blanco para la card */
+    position: relative; /* Necesario para el rectángulo en la parte inferior */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: transform 0.3s ease; /* Transición para efecto de hover */
+     border-bottom: none; /* Quitamos el borde de abajo */
+    
+  }
+
+  
+
+
+.custom-size {
+  /* Ajusta el padding para agrandar o achicar el área clicable */
+  padding:5px  5px;
+  /* Cambia el tamaño de la letra */
+  font-size: 1.125rem; /* 18px aproximadamente */
+
+  /* Opcional: fijas un ancho/alto */
+  width:18.75rem;
+  height: auto;
+
+  /* Opcional: redondeo de bordes distinto */
+  border-radius: 0.5rem;
+}
+  .cardhome::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 9px;
+  background: linear-gradient(to right, yellow, transparent);
+}
+
+/* Estilo del cuerpo de la card */
+.card-body {
+  background-color:  #0a1b45;
+  padding: 20px;
+  color: white; /* Texto blanco */
+  display: flex; /* Activamos flexbox */
+  flex-direction: column; /* Alineamos los elementos en columna */
+  justify-content: center; /* Centra el contenido verticalmente */
+  align-items: center; /* Centra el contenido horizontalmente */
+  z-index: 2;
+}
+
+/* Estilo del botón dentro de la card */
+.card .btn-primary {
+  background-color: #2253C5; /* Color del botón azul */
+  border: none; /* Sin borde */
+  transition: background-color 0.3s ease; /* Transición para hover */
+  border-radius: 20px; /* Bordes redondeados del botón */
+  padding: 10px 20px;
+  font-size: 1rem;
+  margin-top: 10px; /* Espaciado arriba del botón */
+}
+
+/* Efecto hover en el botón */
+.card .btn-primary:hover {
+  background-color: #1a3a9b; /* Azul más oscuro al pasar el cursor */
+}
+
+/* Estilo del rectángulo en la parte inferior de la card */
+.card::after {
+  content: ''; /* Creamos el pseudo-elemento */
+  position: absolute; /* Posición absoluta */
+  bottom: -5px; /* Lo posicionamos justo debajo de la card */
+  left: 0;
+  width: 100%; /* Asegura que ocupe todo el ancho de la card */
+  height: 5px; /* Delgado */
+  background: linear-gradient(to right, #ffcc00, transparent); /* Degradado de amarillo a transparente */
+  z-index: 2; /* Asegura que el rectángulo esté por encima del contenido */
+}
+.contenido-principal{
+ display: flex;
+  justify-content: center;    /* Centra las cards horizontalmente */
+  gap: 2rem;                  /* Espacio entre las cards (ajusta a tu gusto) */
+  flex-wrap: wrap;            /* Permite que bajen a otra línea si hay muchas o en responsive */
+  margin-top: 2rem;
+}
+.card-text{
+  text-align: center;
+  font-size:1.2rem;
+
+
+}.card-title{
+ text-align: center;
+ font-size: 1.5rem;
+ color: #ffcc00;
+}
+
+
+
+/* seccion promocionales */
+
+h1{
+   text-align: center;
+ font-size: 1.5rem;
+ color: #007bff;
+ margin: .625rem .625rem;
+ padding: .625rem .625rem;
+ border-radius: .9375rem;
+ width: auto;
+}
+.card-hogar {
+  background-color: #fff;
+  border: 2px solid #333;
+  border-radius: .9375rem;
+  padding: .625rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  
+  height: 100%;
+  margin: .3125rem .3125rem;
+  align-items: center;
+  padding: 1.25rem;
+}
+
+.card-hogar:hover {
+  border-color: #007bff;
+}
+
+.card-hogar .card-icon img {
+  width: 18.75rem;
+  height: auto;
+  margin: 0 auto 5px;
+
+}
+
+.card-hogar .card-title {
+  font-size: 1.25rem;
+  margin: 0.5rem 0;
+  color: #007bff;
+}
+
+.card-hogar .card-intro {
+  font-size: 15px;
+  color: #333;
+  margin: 1.25rem;
+  text-align: center;
+  padding: .3125rem;
+  
+}
+
+.card-Hogar .btn {
+  margin-bottom: 0.5rem;
+}
+
+.services-list1 {
+  list-style: disc inside;
+  text-align: left;
+  margin-top: 0.5rem;
+  padding-left: 0; /* ya lo maneja `inside` */
+  color: #007bff;
+  
+}
+
+.services-list1 li {
+  background-color: #007bff;
+  margin: 0.35rem 0;
+  font-size: 0.9rem;
+  color: #ffffff;
+  padding: .625rem .625rem;
+  
+}
+
+:root {
+  --color-cuspide-blue: #0886f7;
+  --logo-max-width: 120px;
+  --logo-max-height: 75px;
+}
+
+/* Banner de logos */
+.banner-clientes {
+  display: flex;
+  max-width: 1200px;
+  margin: 1.5rem auto;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(30,30,60,0.08);
+  background: #fff;
+}
+.banner-texto {
+  flex: 1;
+  padding: 2rem;
+  background: var(--color-cuspide-blue);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 250px;
+}
+.banner-texto h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+.banner-texto p {
+  font-size: 1.1rem;
+}
+
+/* Animación logos */
+.banner-logos {
+  flex: 2;
+  position: relative;
+  min-height: 170px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-group {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s;
+}
+.logo-group.active {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 2;
+}
+
+.logo-group img {
+  max-width: var(--logo-max-width);
+  max-height: var(--logo-max-height);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 8px 0 rgba(30,30,60,0.06);
+  padding: .25rem .75rem;
+  margin: 0 .2rem;
+}
+
+/* Responsive para móvil */
+@media (max-width: 768px) {
+  .banner-clientes { flex-direction: column; }
+  .banner-texto { text-align: center; padding: 1.2rem; }
+  .banner-logos { min-height: 120px; }
+  .logo-group { justify-content: center; flex-direction: column; gap: .7rem; }
+  .logo-group img { max-width: 80px; max-height: 50px; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Terminos */
+
+
+
+
+.seccionfooter {
+  display: flex;                     /* 1. Flexbox */
+  justify-content: space-evenly;     /* 2. Espacios iguales entre items */
+  align-items: center;               /* 3. Alineación vertical */
+  background: #0a1b45;
+  color: #fff;
+  padding: 1.2rem 2rem;
+  box-sizing: border-box;
+  /* eliminamos grid-template-columns y gap */
+}
+
+
+
+.footer-contacto {
+  justify-self: center;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  font-size: 1.15rem;
+}
+.footer-creditos {
+  justify-self: center;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: normal;
+}
+
+
+.link-footer-extra {
+  display: inline-block;
+  text-decoration: none;
+  color: #ffffff;
+  border: 2px solid yellow;       /* 👈 ¡Aquí está el cambio importante! */
+  border-radius: 1.5em;
+  padding: 0.5em 1.2em;
+  background: transparent;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+
+
+.footer-info-extra .restricciones {
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+
+.link-footer-extra {
+  display: inline-block;
+  text-decoration: none;
+  color: #ffffff;
+
+  border-radius: 1.5em;
+  padding: 0.5em 1.2em;
+  background: transparent;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.link-footer-extra:hover,
+.link-footer-extra:focus {
+  background: yellow;
+  color: #0a1b45; /* azul oscuro */
+  border-color: yellow;
+}
+
+/* Opcional: ajustar tipografía interna */
+.link-footer-extra .atencion {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.link-footer-extra .restricciones {
+  font-size: 0.75rem;
+  opacity: 0.85;
+}
+
+
+
+
+
+
+
+
+
+
+
+.terminos {
+  justify-self: end;
+  border: 1.5px solid #fff;
+  color: #fff;
+  border-radius: 2em;
+  background: transparent;
+  font-size: 1.1rem;
+  text-decoration: none;
+  padding: 0.5em 2em;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+  display: inline-block;
+  outline: none;
+}
+.terminos:hover,
+.terminos:focus {
+  background: #fff;
+  color: #0a1b45;
+  border: 1.5px solid #0a1b45;
+}
+
+/* Responsive: en móvil todo en columna centrado */
+@media (max-width: 800px) {
+  .seccionfooter {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 0.7rem;
+    padding: 1.2rem 0.5rem;
+    text-align: center;
+  }
+  .footer-contacto,
+  .footer-creditos,
+  .terminos {
+    justify-self: center;
+  }
+  .footer-contacto {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+.btn-contacto.whatsapp {
+color: #ffffff;
+    text-decoration: none;
+}
+
+/* Si deseas un fondo azul o gris para el teléfono */
+.btn-contacto.telefono {
+color: #fff;
+    text-decoration: none;
+}
+.btn-contacto:hover {
+  border-radius: .9375rem;
+  padding: .3125rem;
+  background-color: #007bff;
+  color: #ffffff; /* texto azul al hover */
+  /* o color: #25D366;  para texto verde */
+}
+
+
+.direccion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1.5rem 1.5rem 1.5rem;
+  gap: 0.5rem; /* espacio entre icono y texto */
+}
+
+.dire {
+  color: #273280;; /* NARANJA o el color que prefieras */
+  font-size: 1.3rem;
+}
+
+.texto-direccion {
+  color: #273280;  /* AZUL o el color que prefieras */
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.card-nosotros {
+ display: grid;
+  /* Centra todos los items hija en horizontal y vertical */
+  place-items: center;     /* equivale a: align-items:center; justify-items:center; */
+  
+  /* Para que ocupe toda la ventana, de modo que la tarjeta quede realmente en el medio */
+  min-height: 100vh;  }
+.card-nosotros {
+  
+  display: grid;
+  grid-template-columns: 2fr 1fr;           /* Dos columnas: texto / imagen */
+  gap:2rem;                                /* Espacio entre columnas */
+             /* Borde negro */
+  border-radius: 1rem;                      /* Esquinas redondeadas */
+  padding: 1rem;                            /* Relleno interno */
+   max-width: 800px;
+  margin: 1.875rem auto;    /* top/bottom 1rem, left/right auto para centrar */
+  background-color: #0a1b45;       
+  justify-items: center;            /* Fondo blanco */
+
+  grid-template-areas: 
+    "contenido imagen";
+}
+
+/* Zona de texto */
+.card-nosotros__contenido {
+  grid-area: contenido;                     /* Mapea a la primera área */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;     
+    align-items: center;       /* centra horizontalmente los hijos */
+  text-align: center;               /* Centra verticalmente */
+}
+
+.card-nosotros__contenido h2 {
+  margin: 0 0 1.25rem;
+  font-size: 2.5rem;
+   color: #ffffff;
+}
+
+.card-nosotros__contenido p {
+  margin: 0;
+  line-height: 1.5;
+  color: #ffffff;
+  text-align: justify;
+}
+
+/* Zona de imagen */
+.card-nosotros__imagen {
+  grid-area: imagen;                        /* Mapea a la segunda área */
+  display: flex;
+  align-items: center;
+  justify-content: center;     
+  width: 9.375rem;
+  height: auto;     
+  width: auto;
+  max-width: 9.375rem;        /* Centra la imagen */
+}
+
+.card-nosotros__imagen img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+
+
+
+/* Card servicios */
+
+.card-servicio {
+  background-color: #fff;
+  border: 2px solid #333;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: .3125rem .3125rem;
+  align-items: center;
+}
+
+.card-servicio:hover {
+  border-color: #007bff;
+}
+
+.card-servicio .card-icon img {
+  width: 12.5rem;
+  height: auto;
+  margin: 0 auto 0.75rem;
+
+}
+
+.card-servicio .card-title {
+  font-size: 2.375rem;
+  margin: 0.5rem 0;
+  color: #007bff;
+}
+
+.card-servicio .card-intro {
+  font-size: 1.75rem;
+  color: #333;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.card-servicio .btn {
+  margin-bottom: 1rem;
+}
+
+.services-list1 {
+  list-style: disc inside;
+  text-align: left;
+  margin-top: 0.5rem;
+  padding-left: 0; /* ya lo maneja `inside` */
+  color: #007bff;
+  
+}
+.services-list2 {
+  list-style: disc inside;
+  text-align: left;
+  margin-top: 0.5rem;
+  padding-left: 0; /* ya lo maneja `inside` */
+  color: #007bff;
+  
+}
+.services-list2 li {
+  background-color: #007bff;
+  margin: 0.35rem 0;
+  font-size: 0.9rem;
+  color: #ffffff;
+  padding: .625rem .625rem;
+  
+}
+
+.services-list3 li {
+  list-style: disc inside;
+  background-color: #007bff;
+  margin: 0.35rem 0;
+  font-size: 0.9rem;
+  color: #ffffff;
+  padding: .625rem .625rem;
+  
+}
+.services-list4 li {
+  list-style: disc inside;
+  background-color: #007bff;
+  margin: 0.35rem 0;
+  font-size: 0.9rem;
+  color: #ffffff;
+  padding: .625rem .625rem;
+  
+}
+.services-list5 li {
+  list-style: disc inside;
+  background-color: #007bff;
+  margin: 0.35rem 0;
+  font-size: 0.9rem;
+  color: #ffffff;
+  padding: .625rem .625rem;
+  
+}
+.services-list6 li {
+  list-style: disc inside;
+  background-color: #007bff;
+  margin: 0.35rem 0;
+  font-size: 0.9rem;
+  color: #ffffff;
+  padding: .625rem .625rem;
+  
+}
+.services-list7 li {
+  list-style: disc inside;
+  background-color: #007bff;
+  margin: 0.35rem 0;
+  font-size: 0.9rem;
+  color: #ffffff;
+  padding: .625rem .625rem;
+  
+}
+
+/* Responsive: apilar en móvil */
+@media (max-width: 600px) {
+  .card-nosotros {
+    grid-template-columns: 1fr;             /* Una sola columna */
+    grid-template-areas:
+      "contenido"
+      "imagen";
+        margin: 1rem .625rem;    /* 1rem arriba/abajo, centrado horizontal */
+    padding: 0 1rem; 
+    gap: .625rem; 
+  }
+  .card-nosotros__imagen {
+    margin-top: 1rem;
+  }
+}
+
+
+
+
+/* Títulos dentro de cada tarjeta */
+.card-servicio .card-title {
+  /* nunca menos de 1.25rem, ideal 4vw, máximo 2rem */
+  font-size: clamp(1.25rem, 4vw, 2rem);
+}
+
+/* Párrafos de introducción */
+.card-servicio .card-intro {
+  /* nunca menos de 1rem, ideal 3vw, máximo 1.25rem */
+  font-size: clamp(1rem, 3vw, 1.25rem);
+}
+
+/* Botones dentro de la tarjeta */
+.card-servicio .btn {
+  /* nunca menos de 0.875rem, ideal 2vw, máximo 1rem */
+  font-size: clamp(0.875rem, 2vw, 1rem);
+}
+
+
+.quzpide-cards {
+  display: grid;
+  /* Una sola columna que ocupa todo el ancho disponible */
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  align-items: start;      /* para que no se estiren verticalmente */
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  color: #333;
+}
+.card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.card h2 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1.2rem;
+  color: #005689;
+}
+
+.card p {
+  margin: 0;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 600px) {
+  .quzpide-cards {
+    padding: 1rem;
+  }
+  .card {
+    padding: 1rem;
+  }
+  .card h2 {
+    font-size: 1.1rem;
+  }
+  .card p {
+    font-size: 0.9rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.cardsservicios ul li {
+  text-transform: uppercase;
+  /* Puedes agregar otros estilos si quieres */
+}
+.services-list6 li {
+  text-transform: uppercase;
+}
+
+/* Anulamos la transformación solo para el span que contiene el texto entre paréntesis */
+.services-list6 li .no-transform {
+  text-transform: none;
+}
+
+
+
+/* marcas version movil */
+@media (max-width: 768px) {
+  /* 1) Aseguramos que el contenedor tenga suficiente altura */
+  .banner-logos {
+    position: relative;
+    background: #fff;
+    border-radius: .75rem;
+    overflow: hidden;
+    padding: 1rem 0;
+    min-height: 360px;    /* sube el container para más espacio vertical */
+  }
+
+  /* 2) Grid de 4 filas con espacio uniforme */
+  .logo-group {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-rows: repeat(4, auto);
+    align-content: space-evenly;  /* reparte las filas verticalmente */
+    justify-items: center;        /* centra logos horizontal */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease-in-out;
+  }
+  .logo-group.active {
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 2;
+  }
+
+  /* 3) Logos más grandes */
+  .logo-group img {
+    max-width: 100px;    /* antes 80px, lo subimos */
+    max-height: 100px;
+    object-fit: contain;
+  }
+
+  /* 4) Ocultar todo a partir del 5º logo */
+  .logo-group img:nth-child(n+5) {
+    display: none;
+  }
+}
+
+
+/* Móvil: apilar en columna  footer*/
+@media (max-width: 800px) {
+  .seccionfooter {
+    flex-direction: column;          /* apila los items */
+    row-gap: 0.7rem;                 /* espacio vertical uniforme */
+    padding: 1.2rem 0.5rem;
+    text-align: center;
+  }
+}
