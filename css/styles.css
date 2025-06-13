@@ -463,7 +463,7 @@ h1{
 }
 
 .link-footer-extra .restricciones {
-  font-size: 0.75rem;
+  font-size: 8¿.5625rem;
   opacity: 0.85;
 }
 
@@ -952,4 +952,14 @@ color: #fff;
     object-fit: contain;
     margin: 0.25rem 0;
   }
+}
+
+
+.sin-viñeta {
+  list-style-type: none !important;
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+}
+.sin-viñeta {
+ padding: .75rem 1rem  !important;
 }
